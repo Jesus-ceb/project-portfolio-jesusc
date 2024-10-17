@@ -1,0 +1,280 @@
+/* NORMALIZACION */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* esto mantiene el ancho a pesar del margin y el padding */
+    font-family: "Inconsolata", monospace; /* tipo de letra */
+    list-style: none; /* quitar los puntos y decoracion de las listas */
+    text-decoration: none; /* esto quita el subrayado de los enlaces  */
+    color: white;    
+}
+
+header{
+    position: fixed; /* esto hace que el header quede fijo en la parte superior */
+    right: 0;
+    top: 0;
+    z-index: 100; /* esto hace que el header se muestre por encima */
+    width: 100%; /* esto hace que el header ocupe todo el ancho de la pantalla */
+    display: flex; /* esto hace que los elementos se pongan en linea  */
+    align-items: center; /* centra verticalmente */
+    justify-content: space-between; /* hace que los elementos se separen */
+    padding: 28px 8%; /* : eje vertical(px) eje horizontal(%) */
+    background-color: transparent;   
+}
+
+.logo {
+    font-size: 30px; /* tamaño letras*/
+    font-weight: 680; /* grueso de las letras */
+}
+
+.navlist {
+    display: flex; /* hace que los elementos ul se coloquen en linea */
+
+    
+
+}
+
+.navlist a {
+    margin-left: 60px; /* separa las palabras de la lista ul */
+    font-size: 18px; /*tamaño de letra */
+    font-weight: 600;
+    border-bottom: 2px solid transparent; /* da un linea subrayada bajo cada palabra */
+    transition: all .5s ease; /* esto hara que todas las transiciones duren 0.5s*/
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white /* da un linea subrayada bajo cada palabra */
+
+}
+
+
+#menu-icon {
+    display: none;  /*oculta el elemento seleccionado */
+} 
+
+#menu-icon{ 
+    font-size: 25px;
+    z-index: 101;
+    cursor: pointer;
+} 
+
+#menu-toggle {
+    display: none; /* nunca se observara el checkbox*/
+} 
+
+
+.menu-icon-action {
+    display: none ; /*para que nunca se le pueda hacer clicl*/
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-texto h5{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-texto h4{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.hero-texto h1{
+    font-size: 50px;
+    font-family: "Roboto Mono", monospace;
+    line-height: 1;
+    margin: 0 0 25px;
+}
+
+.hero-texto p{
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.9;
+}
+
+.hero-img img{
+    width: 400px;
+    border-radius: 50%;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 5s linear;
+}
+
+.hero-img img:hover {
+    width: 500px;
+    opacity: 0.7;
+}
+
+.hero-texto a {
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+
+}
+
+.hero-texto a:hover{
+    background-color: transparent ;
+    border: 1px solid white;
+    transform: translateX(8px);
+} 
+
+.hero-texto a.videos{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 25px;
+}
+
+.hero-texto a.i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    margin: 26px 0;
+    font-size: 40px;
+    transition: all 0.9 ease;
+}
+
+.icons i:hover {
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 15px;
+    font-size: 35px; 
+    background-color: #12383d;
+    border-radius: 35px;
+    transition: all 1 ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+
+/* mediaquerie para que la pagina web sea responsive */
+
+@media (max-width:992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-texto {
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-texto p{
+        font-size: 70%;
+    }
+
+    .icons{
+        display: none;
+    }
+
+    .scroll-down {
+         display: none;
+    }
+
+
+}
+
+@media (max-width:700px){
+    .menu-icon-action{
+        display: block;
+
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-texto{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img{
+        margin: 0;
+
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+
+    }
+
+    .navlist{
+        /* display: none; */
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #06272be9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5 ease-out;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+        opacity: 0.9;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul {
+        right: 0;
+    }
+}
